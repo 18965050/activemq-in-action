@@ -9,6 +9,12 @@ import javax.jms.Session;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+/**
+ * 由于是非持久定义(durable description), 因此需要先启动consumer, 再启动producer <br />
+ * 持久定义是通过  javax.jms.Session.createDurableSubscriber()来实现的. 持久订阅的情况下可以先启动producer
+ * @author lvchenggang
+ *
+ */
 public class Consumer {
 
     private static String brokerURL = "tcp://localhost:61616";
